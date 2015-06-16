@@ -29,6 +29,10 @@ func login(w http.ResponseWriter, r *http.Request){
     } else {
 	r.ParseForm()
         // do some ligin logically
+	if len(r.Form["username"][0])==0 {
+	    // do something when username lenght is zero
+	    fmt.Println("Username is length zero")
+	}
 	fmt.Println("username; ", r.Form["username"])
 	fmt.Println("password: ", r.Form["password"])
     }
